@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hope for Children</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Hope for Children</div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Give a Child a Chance to Thrive</h1>
+        <p>Supporting children with food, clothing, shelter, education, and healthcare.</p>
+        <a href="donate.html" class="hero-btn">Donate Now</a>
+    </section>
+
+    <!-- GALLERY CAROUSEL -->
+    <section class="carousel-section">
+        <h2>Our Impact in Pictures</h2>
+        <p>Real lives changed through your generosity.</p>
+
+        <div class="carousel">
+            <img src="images/photo1.jpg" class="slide active">
+            <img src="images/photo2.jpg" class="slide">
+            <img src="images/photo3.jpg" class="slide">
+            <img src="images/photo4.jpg" class="slide">
+
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+
+        <a href="gallery.html" class="hero-btn">View Full Gallery</a>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="highlights">
+        <div class="card">
+            <h3>🍲 Food Support</h3>
+            <p>Three nutritious meals per day for one child for one week.</p>
+        </div>
+        <div class="card">
+            <h3>👕 Clothing</h3>
+            <p>Age-appropriate clothing for children aged 1–17.</p>
+        </div>
+        <div class="card">
+            <h3>📚 Education</h3>
+            <p>Books, stationery, and learning materials.</p>
+        </div>
+        <div class="card">
+            <h3>🏠 Shelter</h3>
+            <p>Safe and stable living environments.</p>
+        </div>
+        <div class="card">
+            <h3>🩺 Health</h3>
+            <p>Basic healthcare, hygiene, and medical support.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Hope for Children | Every Child Deserves a Future</p>
+    </footer>
+
+    <!-- INLINE SCRIPT -->
+    <script>
+        let slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        function showSlide(i) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[i].classList.add("active");
+        }
+
+        document.querySelector(".next").onclick = () => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        };
+
+        document.querySelector(".prev").onclick = () => {
+            index = (index - 1 + slides.length) % slides.length;
+            showSlide(index);
+        };
+
+        setInterval(() => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        }, 5000);
+    </script>
+
+</body>
+
+</html>
